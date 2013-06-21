@@ -11,8 +11,6 @@ function boardUpdate(array){
 	array.forEach(plugIn)
 }
 
-
-
 function plugIn(element, index){
 	if (element != null){
 	$('#post-'+index).text(element);
@@ -21,6 +19,14 @@ function plugIn(element, index){
 
 function whoseTurn(turn){
 	pturn = turn
+}
+
+function getData(){
+	var array = [];
+		for (var i = 0; i < $('#parent-list li').length + 1; i++){
+		array[i-1] = $('#parent-list li:nth-child('+i+')').text();
+		}
+	return array	
 }
 
 $(document).ready(function() {
@@ -33,12 +39,14 @@ $(document).ready(function() {
 	if(e.target && e.target.nodeName == "LI") {
 		console.log("List item ",e.target.id.replace("post-")," was clicked!");
 		$(e.target).text('x');
-		// var data = 
+		debugger
+		getData();
 
 		// $.ajax({
 		// 	type: "POST",
-		// 	beforeSend: $(this).unbind('click');
-		// 	data: 
+		// 	url: "/board_info",
+		// 	beforeSend: $(this).unbind('click'),
+		// 	data: { "board" : array, "turn" : pturn},
 		// })
 
 		// var clicked = 
@@ -53,5 +61,7 @@ $(document).ready(function() {
 });
 });
 
-
-
+var array = []
+for (var i = 0; i < $('#parent-list li').length + 1; i++){
+	array[i-1] = $('#parent-list li:nth-child('+i+')').text();
+}
