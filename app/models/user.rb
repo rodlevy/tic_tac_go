@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   include BCrypt
-  has_many :player_1_boards, :foreign_key => "player_1", :class_name =>"Board" # May need to be player_1_id
-  has_many :player_2_boards, :foreign_key => "player_2", :class_name =>"Board"
+  has_many :player_1_boards, :foreign_key => "player_1_id", :class_name =>"Board" # May need to be player_1_id
+  has_many :player_2_boards, :foreign_key => "player_2_id", :class_name =>"Board"
   has_many :games, :through => :boards
 
   attr_reader :entered_password
