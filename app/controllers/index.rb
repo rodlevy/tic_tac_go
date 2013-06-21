@@ -4,13 +4,16 @@ get '/' do
 end
 
 get '/board'  do
+
   @board = Board.find_by_id(1)
   p @board.table
   # erb :board
+
 end
 
 
 get '/lobby' do
+  @games = Game.all
 
   erb :lobby
 end
@@ -26,8 +29,10 @@ post '/create_game' do
   erb :board 
 end
 
-get '/join_game' do
-
+get '/join_game/:id' do
+  #@board
+  @board = Board.find_by_game_id(params[:id])
+  @board.player_2_id = session[:user_id] #this won't work for testing??
   erb :board
 end
 
