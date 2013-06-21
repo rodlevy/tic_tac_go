@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :p1_boards, :foreign_key => "player_1" # May need to be player_1_id
+  has_many :p2_boards, :foreign_key => "player_2"
+  has_many :games, :through => :boards
 
   attr_reader :entered_password
 
