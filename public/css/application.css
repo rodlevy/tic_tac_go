@@ -9,7 +9,7 @@ th {
 }
 
 .header{
-  background-color: gray;
+  background-color: #9A0404;
   height: 30px;
 
 }
@@ -23,6 +23,15 @@ th {
 
 .header #nav a{
   padding-right: 25px;
+  color: white
+}
+
+.header #nav a:visited {
+  color: white;
+}
+
+.header #nav a:link {
+  text-decoration: none;
 }
 
 body, select, input, textarea {  
@@ -32,11 +41,12 @@ body, select, input, textarea {
 }  
 
 .container {
-  margin: 20px auto;
+  /*margin: 20px auto;*/
+  margin-top: 10%;
   width: 700px;
   padding: 0px 20px 20px 20px;
   border: 2px solid orange;
-  background-color: skyblue;
+  /*background-color: skyblue;*/
   border-radius: 20px;
    
 }
@@ -90,4 +100,9 @@ h3 {
   font-size: 200px;
   text-align: center;
 
+}
+
+#tic {
+  height: 500px;
+  padding-bottom: 10px;
 }

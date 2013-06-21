@@ -7,7 +7,7 @@ post '/create_user' do
     erb :errors
   else
     session[:user_id] = new_user.id
-    redirect '/'
+    redirect '/lobby'
   end
 end
 
@@ -28,7 +28,7 @@ post '/login' do
   @user = User.authenticate(params[:user])
   if @user
      session[:user_id] = @user.id
-    redirect to '/'
+    redirect to '/lobby'
   else
     redirect to '/'
   end
