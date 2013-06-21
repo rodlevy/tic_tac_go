@@ -79,3 +79,12 @@ h3 {
   background-color: gray;
   float: left;
 }*/
+
+#color_me li{
+  display:block;
+  width:30%;
+  float:left;
+  height:200px;
+  border:solid black 2px;
+  margin:2px;
+}
