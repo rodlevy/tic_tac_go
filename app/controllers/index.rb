@@ -4,8 +4,9 @@ get '/' do
 end
 
 get '/board'  do
-  
-  erb :board
+  @board = Board.find_by_id(1)
+  p @board.table
+  # erb :board
 end
 
 

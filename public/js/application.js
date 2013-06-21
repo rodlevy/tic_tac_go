@@ -39,7 +39,6 @@ $(document).ready(function() {
 	if(e.target && e.target.nodeName == "LI") {
 		console.log("List item ",e.target.id.replace("post-")," was clicked!");
 		$(e.target).text('x');
-		debugger
 		getData();
 
 		// $.ajax({

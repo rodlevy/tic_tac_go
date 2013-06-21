@@ -3,6 +3,7 @@ class Board < ActiveRecord::Base
   belongs_to :player_1, :class_name => "User"
   belongs_to :player_2, :class_name => "User"
 
+  serialize :table
 
   def check_board
     if self[0] == self[1] && self[1] == self[2] && !self[0].nil?

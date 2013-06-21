@@ -1,12 +1,12 @@
 get '/board_info' do
-  # board = Board.find_by_id(params[:boardId])
+  board = Board.find_by_id(1)
 
   # board.player1
   # board.player2
   # if board.check_board == nil
     content_type :json
-    {:board => [nil,nil,nil,"x","o","x",nil,nil,nil], :turn => true, 
-              :player1 => 1, :player2 => 2 }.to_json
+    {:board => board, :turn => board.turn, 
+              :player1 => board.player_1_id, :player2 => board.player_2_id }.to_json
     # "success"
   # else
     # "fail"
