@@ -1,10 +1,11 @@
 <script>
   boardId = <%=15%>
 </script>
-<p> board.player1</p>
+<p><%=@board.player_1.first_name%></p>
 <p>vs</p>
-<p> board.player2</p>
-
+<% if @board.player_2%>
+<p><%=@board.player_2.first_name%></p>
+<%end%>
 <ul id="parent-list">
   <li id="post-0"></li>
   <li id="post-1"></li>
