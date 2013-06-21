@@ -1,9 +1,9 @@
-var pturn = "true";
+var pturn = "player1";
 
 function checker(){
 	$.get('/board_info', {"boardId" : boardId}, function(response){
 		boardUpdate(response.board);
-		switchTurn(response.turn);
+		whoseTurn(response.turn);
 	});
 };
 
@@ -11,24 +11,35 @@ function boardUpdate(array){
 	array.forEach(plugIn)
 }
 
+
+
 function plugIn(element, index){
 	if (element != null){
 	$('#post-'+index).text(element);
 	}
 }
 
-function switchTurn(turn){
+function whoseTurn(turn){
 	pturn = turn
 }
 
 $(document).ready(function() {
 	// settimer every .5 sec GET check db for updated board and updated turn
-	setInterval(checker, 5000);
+	setInterval(checker, 1000);
 	// if player 1 == true allow clicks
 	// or for player 2 allow clicks
+
 	$("#parent-list").on("click",function(e) {
 	if(e.target && e.target.nodeName == "LI") {
 		console.log("List item ",e.target.id.replace("post-")," was clicked!");
+		$(e.target).text('x');
+		// var data = 
+
+		// $.ajax({
+		// 	type: "POST",
+		// 	beforeSend: $(this).unbind('click');
+		// 	data: 
+		// })
 
 		// var clicked = 
 		// var board = 
@@ -41,7 +52,6 @@ $(document).ready(function() {
 	}
 });
 });
-
 
 
 
