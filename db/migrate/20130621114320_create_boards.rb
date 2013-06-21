@@ -4,7 +4,7 @@ class CreateBoards < ActiveRecord::Migration
       t.integer :player_1
       t.integer :player_2
       t.integer :game_id
-      t.boolean :turn
+      t.boolean :turn , :default => true 
       t.text :table, array: true
     end
   end
