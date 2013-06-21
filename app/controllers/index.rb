@@ -37,5 +37,5 @@ def checkboard(table)
     return table[1]
   elsif table[2] == table[5] && table[5] == table[8] && !table[2].nil?
     return table[2]  
-
+  end
 end

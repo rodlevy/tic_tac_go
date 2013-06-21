@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include BCrypt
   has_many :p1_boards, :foreign_key => "player_1" # May need to be player_1_id
   has_many :p2_boards, :foreign_key => "player_2"
   has_many :games, :through => :boards
@@ -14,12 +15,12 @@ class User < ActiveRecord::Base
   end
 
   def password
-    @password ||= BCrypt::Password.new(password_hash)
+    @password ||= Password.new(password_hash)
   end
 
   def password=(new_password)
     @entered_password = new_password
-    @password = BCrypt::Password.create(new_password)
+    @password = Password.create(new_password)
     self.password_hash = @password
   end
 
