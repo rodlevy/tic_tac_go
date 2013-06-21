@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
 
   attr_reader :entered_password
 
-  validates :entered_password, :length => { :minimum => 6 }
-  validates :email, :uniqueness => true, :format => /.+@.+\..+/
+  # validates :entered_password, :length => { :minimum => 6 }
+  # validates :email, :uniqueness => true, :format => /.+@.+\..+/
 
   def self.authenticate(params)
     user = User.find_by_email(params[:email])
